@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      function Rectangle(width, height) {
+        this.width = width;
+        this.height = height;
+      }
+      Rectangle.prototype.PrintRectangle = function() {
+        var node = document.createElement("P"); // Create a <p> node
+        var textnode = document.createTextNode(
+          "Rectangle width is " +
+            this.width +
+            " and Rectangle height is " +
+            this.height
+        ); // Create a text node with info
+        node.appendChild(textnode); // Append the text to <p>
+        document.getElementById("print").appendChild(node); // Add p to div to print
+        return;
+      };
+      Rectangle.prototype.RectanglePerimeter = function() {
+        return 2 * this.width + 2 * this.height;
+      };
+
+      first = new Rectangle(2, 3);
+      second = new Rectangle(4, 5);
+
+      function print() {
+        window.first.PrintRectangle();
+        window.second.PrintRectangle();
+      }
+      function calc() {
+        bigger = window.first.RectanglePerimeter();
+
+        if (
+          window.second.RectanglePerimeter() > window.first.RectanglePerimeter()
+        ) {
+          bigger = window.second.RectanglePerimeter();
+        }
+
+        document
+          .getElementById("perimeter")
+          .append("The biggest rectangle has perimeter of " + bigger);
+      }
+    </script>
+  </head>
+  <body onload="print()">
+    <p>Параграф 1</p>
+
+    <div id="print"></div>
+
+    <p>Параграф 2</p>
+
+    <button type="button" onclick="calc()">Calulate Perimeter</button>
+    <p id="perimeter"></p>
+  </body>
+</html>
