@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      function flatten(niza, flatniza = []) {
+        for (element of niza) {
+          if (Array.isArray(element)) {
+            flatten(element, flatniza);
+          } else {
+            flatniza.push(element);
+          }
+        }
+        return flatniza;
+      }
+
+      Array.prototype.contains = function(v) {
+        for (var i = 0; i < this.length; i++) {
+          if (this[i] === v) return true;
+        }
+        return false;
+      };
+
+      Array.prototype.unique = function() {
+        var arr = [];
+        for (var i = 0; i < this.length; i++) {
+          if (!arr.contains(this[i])) {
+            arr.push(this[i]);
+          }
+        }
+        return arr;
+      };
+
+      function difference(nizaEden, nizaDva) {
+        return flatten(nizaEden.concat(nizaDva)).unique();
+      }
+
+      console.log(difference([1, 2, 3], [100, 2, 1, 10]));
+      console.log(difference([1, 2, 3, 4, 5], [1, [2], [3, [[4]]], [5, 6]]));
+      console.log(difference([1, 2, 3], [100, 2, 1, 10]));
+
+    </script>
+  </head>
+  <body>
+    <p>Проверете ја конзолата за уникатни вредности.</p>
+  </body>
+</html>
