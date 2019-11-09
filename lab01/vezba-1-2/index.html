@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      function soberiSoPet() {
+        var broj = 23;
+        document.getElementById("rezultat").append(broj + 5);
+      }
+      function helloWorld() {
+        var zbor = "Hello";
+        document.getElementById("hello").append(zbor + " World");
+      }
+    </script>
+  </head>
+  <body>
+    <p>
+      Кликнете на копчето за да се додаде 5 на претходно дефинирана променлива:
+    </p>
+    <button type="button" onclick="soberiSoPet()">Собери</button>
+    <p>Резултатот е:</p>
+    <p id="rezultat"></p>
+    <p>Кликнете на копчето за да се припои зборот "World" на зборот "Hello"</p>
+    <button type="button" onclick="helloWorld()">Испечати споени</button>
+    <p>Ќе се добие:</p>
+    <p id="hello"></p>
+  </body>
+</html>

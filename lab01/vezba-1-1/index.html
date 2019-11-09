@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <p>Кликнете на копчето за да се испечатат вредностите на променливите</p>
+    <button type="button" onclick="vnesiVrednost()">Внеси вердности</button>
+    <p>Вредноста на бројчаната променлива е:</p>
+    <p id="broj"></p>
+    <p>Вредноста на текстуалната променлива е:</p>
+    <p id="zbor"></p>
+    <script>
+      function vnesiVrednost() {
+        //your code
+        var broj = 23;
+        var zbor = "Месечина";
+        document.getElementById("broj").append(broj);
+        document.getElementById("zbor").append(zbor);
+      }
+    </script>
+  </body>
+</html>
