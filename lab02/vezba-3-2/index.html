@@ -2,19 +2,19 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-   
+
     <script>
-      function change(){
-          var old = document.getElementById("toChange");
-          var newEl = document.createElement("a");
-          newEl.innerHTML= old.innerHTML;
-          old.parentNode.replaceChild(newEl, old);
-        
+      function change() {
+        var old = document.getElementById("toChange");
+        var newEl = document.createElement("a");
+        newEl.href = old.innerHTML;
+        newEl.innerHTML = old.innerHTML;
+        old.parentNode.replaceChild(newEl, old);
       }
     </script>
   </head>
   <body>
-    <span id="toChange">Внатрешен текст</span><br>
+    <span id="toChange">http://google.com</span><br /><br />
     <button type="button" onclick="change()">Смени во линк</button>
   </body>
 </html>

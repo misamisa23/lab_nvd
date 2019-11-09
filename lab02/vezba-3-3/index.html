@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+
+    <script>
+      var sliki = [
+        "https://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg",
+        "https://farm6.staticflickr.com/5211/5384592886_80a512e2c9.jpg",
+        "https://farm1.staticflickr.com/33/45336904_1aef569b30_n.jpg"
+      ];
+
+      function showImage() {
+        var slika = document.getElementById("slika");
+        if (slika.childNodes[0]) {
+          slika.removeChild(slika.childNodes[0]);
+        }
+        var date = new Date();
+        var created = date.getTime();
+        var random = created % 3;
+
+        var myImg = document.createElement("img");
+        myImg.src = sliki[random];
+        document.getElementById("slika").appendChild(myImg);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="slika"></div>
+    <button type="button" onclick="showImage()">Show image</button>
+  </body>
+</html>
