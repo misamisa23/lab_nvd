@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      function func() {
+        var date = new Date();
+        var created = date.getTime();
+        var lastcalled = created;
+        var diff = 0;
+        return function() {
+          var d = new Date();
+          var now = d.getTime();
+
+          diff = now - lastcalled;
+          lastcalled = now;
+          if (diff == 0) {
+            return created;
+          }
+
+          return diff;
+        };
+      }
+      var last_call_func = func();
+
+      console.log(last_call_func());
+      console.log(last_call_func());
+      setTimeout(() => console.log(last_call_func()), 1000);
+    </script>
+  </head>
+  <body>
+    <p>Проверете ја конзолата за времето на повикување.</p>
+  </body>
+</html>

@@ -3,30 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <script>
-      function fib(){
-  var twostepsback = 0
-  var onestepback = 1
+      function fib() {
+        var twostepsback = 0;
+        var onestepback = 1;
 
-  return function(){
-    sum = twostepsback + onestepback
-    twostepsback = onestepback
-    onestepback = sum
-      return sum
-  
-      
-    }
-}
-    var fib_next = fib()
+        return function() {
+          sum = twostepsback + onestepback;
+          twostepsback = onestepback;
+          onestepback = sum;
+          return sum;
+        };
+      }
+      var fib_next = fib();
 
-      console.log(fib_next()) // returns 1 
-      console.log(fib_next()) // returns 2 
-      console.log(fib_next()) // returns 3 
-      console.log(fib_next()) // returns 5 
-      console.log(fib_next()) // returns 8
-
+      console.log(fib_next()); // returns 1
+      console.log(fib_next()); // returns 2
+      console.log(fib_next()); // returns 3
+      console.log(fib_next()); // returns 5
+      console.log(fib_next()); // returns 8
     </script>
   </head>
   <body>
-    <p>Проверете ја конзолата за уникатни вредности.</p>
+    <p>Проверете ја конзолата за Фибоначи броевите.</p>
   </body>
 </html>
