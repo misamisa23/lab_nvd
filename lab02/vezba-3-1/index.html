@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      input {
+        display: block;
+      }
+    </style>
+    <script>
+      function add() {
+        var myInput = document.createElement("input");
+        myInput.type = "file";
+        document.getElementById("inputs").appendChild(myInput);
+      }
+
+      function removelast() {
+        var inputs = document.getElementById("inputs");
+        inputs.removeChild(inputs.childNodes[inputs.childNodes.length - 1]);
+      }
+    </script>
+  </head>
+  <body>
+    <p>Upload file(s)</p>
+    <div id="inputs">
+      <input type="file" />
+    </div>
+    <br /><br />
+    <button type="button" onclick="add()">Add File</button>
+    <button type="button" onclick="removelast()">Remove Last File</button>
+  </body>
+</html>
