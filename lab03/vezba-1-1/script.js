@@ -109,4 +109,4 @@ while (karakteri.length > 1) {
   }
 }
 
-console.log(karakteri);
+console.log("Winner: name: " + karakteri[0].name + ", hitpoints: " + karakteri[0].hitpoints + "!");
