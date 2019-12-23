@@ -57,13 +57,14 @@ $top: 70px;
 
   position: relative;
   //definirajte ja pozicijata
-  top: -250px;
+  top: -($height - $top);
   left: 600px;
 
   .boxOne{
     //dodadete go veke definiraniot kod vo .boxes i soodvetno dopolnete go
     border: 2px solid red;
     @extend .boxes;
+    margin-bottom: 20px;
    
   }
   .boxTwo{
