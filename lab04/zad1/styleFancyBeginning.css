@@ -1,0 +1,62 @@
+body {
+  background: #EBAD99;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+.first {
+  font-family: "Helvetica", sans-serif;
+}
+
+.second {
+  font-family: "Times New Roman", "Times" serif;
+}
+
+.containerOne {
+  position: relative;
+  height: 350px;
+  background-color: #ccffcc;
+}
+
+.containerOne .left {
+  position: absolute;
+  left: 150px;
+  top: 70px;
+}
+
+.containerOne .right {
+  position: absolute;
+  left: 900px;
+  top: 70px;
+}
+
+.boxes, .containerTwo .boxOne, .containerTwo .boxTwo {
+  width: 150px;
+  height: 50px;
+  border: 2px solid black;
+  text-align: center;
+}
+
+.containerTwo {
+  position: relative;
+  top: -250px;
+  left: 600px;
+}
+
+.containerTwo .boxOne {
+  border: 2px solid red;
+}
+
+.containerTwo .boxTwo {
+  border: 2px solid green;
+}
+
+.imageClass {
+  width: 300px;
+  height: 150px;
+}
+/*# sourceMappingURL=styleFancyBeginning.css.map */

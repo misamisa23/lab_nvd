@@ -1,0 +1,82 @@
+
+//dodadete go bodyStyle.scss dokumentot
+@import 'bodyStyleBeginning';
+
+
+
+$font-first: "Helvetica", sans-serif;
+$font-second: "Times New Roman","Times" serif;
+$height: 350px;
+$background_color: #ccffcc;
+$left: 150px;
+$right: 150px;
+$top: 70px;
+
+.first{
+  //iskoristete promenliva za fontot
+  font-family: $font-first;
+}
+
+.second{
+  //iskoristete promenliva za fontot
+  font-family: $font-second;
+}
+
+.containerOne{
+  //dodadete visina na container-ot
+  //dodadete boja za container-ot
+  position: relative;
+  height: $height;
+  background-color: $background_color;
+  .left{
+    //extend za position
+    position: absolute;
+    //definirajte prostor od levo i od gore za ovoj div
+    left: $left;
+    top: $top;
+
+  }
+
+  .right{
+    position: absolute;
+    //definirajte prostor od levo i od gore za ovoj div kako zbir od .left div-ot i dopolnitelnoto potrebno rastojanie od levo
+    left: $left + 750px;
+    top: $top;
+  }
+}
+
+.boxes{
+  //zaednicki karakteristiki
+  width: 150px;
+  height: 50px;
+  border: 2px solid black;
+  text-align: center;
+}
+
+.containerTwo{
+
+  position: relative;
+  //definirajte ja pozicijata
+  top: -250px;
+  left: 600px;
+
+  .boxOne{
+    //dodadete go veke definiraniot kod vo .boxes i soodvetno dopolnete go
+    border: 2px solid red;
+    @extend .boxes;
+   
+  }
+  .boxTwo{
+    //dodadete go veke definiraniot kod vo .boxes i soodvetno dopolnete go
+    border: 2px solid green;
+    @extend .boxes;
+  }
+
+
+
+}
+
+.imageClass {
+  width: 300px;
+  height: 150px;
+}
