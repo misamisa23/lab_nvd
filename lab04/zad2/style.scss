@@ -116,7 +116,11 @@ $direction: 75deg;
 
 @function stripes($colors, $direction: 90deg, $random: false) {
 	// TODO: Use the previous functions
-
+// If lonely color
+@if length($colors) == 1 { @return $colors; }
+// Else
+$type: if($random, 'random', if(length(nth($colors, 1)) > 1, 'custom', 'equal'));
+@return linear-gradient($direction, call('_stripes-#{$type}-stops', $colors));
 }
 
 
