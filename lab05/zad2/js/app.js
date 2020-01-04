@@ -7,3 +7,64 @@ const products = [
 
 
 // Your Code goes here
+
+
+Vue.component('shopping-cart', {
+	data () {
+		return {
+			
+		}
+	},
+	props: ["items"]
+});
+
+var app = new Vue({
+	el: '#app',
+    data: {
+		cartItems: [],
+		products: products
+    },
+    methods: {
+     addToCart: function(title, price, qty) {
+		var item = {
+			title: title,
+			price: price,
+			qty: qty,
+			itemTotal: function() {
+				return this.price * this.qty
+			}
+		};
+		if (this.cartItems.filter(i => i.title === title).length > 0){
+
+			for (i = 0; i < this.cartItems.length; i++) {
+				if(this.cartItems[i].title == title){
+					this.cartItems[i].qty += qty;
+				}
+			  }
+
+		}else{
+			this.cartItems.push(item);
+		}
+		return
+	 },
+	 removeItem: function(index) {
+			this.cartItems.splice(index,1);
+	 },
+
+    
+	},
+	computed: {
+		// a computed getter
+		Total: function () {
+		  // `this` points to the vm instance
+		  return this.cartItems.map(item => item.itemTotal()).reduce((prev, next) => prev + next, 0)
+		}
+	  },
+	  filters: {
+		formatCurrency: function (value) {
+		  if (!value) return ''
+		 
+		  return value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+		}
+	  }
+  })
