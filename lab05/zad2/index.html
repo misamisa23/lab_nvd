@@ -63,15 +63,19 @@
 	
    <div class="container">
       <div class="row">
-         <div v-for="(item, index) in products" class="col-xs-3 text-center" >
+         <product inline-template  :prods="products" >
+            <div>
+            <div v-for="(item, index) in prods"  class="col-xs-3 text-center">
             <img class="img-responsive" alt="" :src="item.image">
             <h5>{{ item.title }}</h5>
             <h6>${{ item.price | formatCurrency }}</h6>
             <p class="text-center"><input v-model="item.qty" type="number" class="form-control" placeholder="Qty" min="1"/></p>
 							 
                <button @click="addToCart(item.title, item.price, item.qty)" class="btn btn-sm btn-primary">Add to Cart</button>
-            </p>
+            </div>
          </div>
+            </product>
+        
       </div>
    </div>
 </div>
